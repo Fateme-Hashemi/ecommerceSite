@@ -1,0 +1,33 @@
+
+.slidercontainer {
+    width: 800px;
+    height: 500px;
+  }
+  
+
+  .slider-item {
+    width: 100%;
+  }
+  
+ .slidercontainer h1 {
+    font-size: 45px;
+
+  }
+
+  .slidercontainer p {
+    margin: 20px 0;
+  }
+
+.left .btn {
+    padding: 15px 30px;
+    background-color: red;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.right img {
+ 
+}

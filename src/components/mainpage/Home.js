@@ -2,6 +2,8 @@ import React from 'react';
 import Categories from "./Categories";
 import SlideCard from './SlideCard';
 import styles from "./Home.module.css";
+import Sider from './Sider';
+
 
 const Home = () => {
     return (
@@ -10,7 +12,7 @@ const Home = () => {
 
             <div className={styles.container}>
                 <Categories />
-                <SlideCard />
+                <Sider />
             </div>
 
         </section>

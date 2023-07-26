@@ -5,35 +5,28 @@ import Search from "./Search";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const [hideheader, setHideheader] = useState(false);
+  // const [hideheader, setHideheader] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-        setHideheader(window.scrollY > 100);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //       setHideheader(window.scrollY > 100);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
       <div className={styles.container}>
         <Head />
         <Search />
-        {hideheader 
-
-        ?
         <Navbar />
-          :
-       <div> 
-    
-      <Navbar />
-   </div>
-         }
+         
+   
       </div>
     </>
   );

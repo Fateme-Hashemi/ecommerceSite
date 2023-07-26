@@ -68,7 +68,7 @@ const Categories = () => {
         {data.map((value, index) => {
           return (
             <div className={styles.box} key={index}>
-              <img src={value.cateImg} alt='' />
+              <img src={value.cateImg} alt='' className={styles.categoryimg} />
               <span>{value.cateName}</span>
             </div>
           )

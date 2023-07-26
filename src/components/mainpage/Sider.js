@@ -1,10 +1,20 @@
 import React from 'react';
+import styles from "../mainpage/Sider.module.css";
+import SlideCard from './SlideCard';
+
 
 const Sider = () => {
     return (
-        <div>
-        <h1>Slider</h1>
-        </div>
+        <>
+       <section className={styles.homeside}>
+            <div className={styles.container}>
+              
+              <SlideCard />
+
+            </div>
+
+        </section>
+        </>
     );
 };
 
