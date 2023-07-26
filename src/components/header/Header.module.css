@@ -1,0 +1,10 @@
+.container {
+    height:auto;
+    position: fixed;
+    top: 0;
+    z-index: 1000000;
+    width: 100%;
+    background: #fff;
+  
+    transition: 0.5s;
+}
