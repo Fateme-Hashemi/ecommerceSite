@@ -7,7 +7,7 @@ import styles from "./SlideCard.module.css";
 
 const SlideCard = () => {
     const settings = {
-        // dots: true,
+        dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -23,6 +23,7 @@ const SlideCard = () => {
         {Sdata.map((value, index) => {
           return (
             <div className={`${styles.boxcontainer} ${styles.slideritem}`} key={index}>
+           
               <div className={styles.left}>
                 <h1>{value.title}</h1>
                 <p>{value.desc}</p>

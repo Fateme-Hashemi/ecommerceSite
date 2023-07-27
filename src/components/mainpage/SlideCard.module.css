@@ -2,6 +2,7 @@
 .slidercontainer {
     width: 800px;
     height: 500px;
+    margin-top: 50px !important;
   }
   
 
@@ -20,14 +21,57 @@
 
 .left .btn {
     padding: 15px 30px;
-    background-color: red;
+    background-color: #e94560;
     color: #fff;
     font-size: 18px;
     border: none;
     outline: none;
     border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.boxcontainer.slideritem {
+  display: flex  !important;
+  justify-content: space-between !important;
+
+
 }
 
 .right img {
- 
+width:auto;
+height: auto;
+
+}
+
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.slidercontainer ul {
+  position: absolute;
+  bottom: 20px;
+}
+.slidercontainer ul li {
+  border: 2px solid #b8b7b7;
+  border-radius: 50%;
+  padding: 10px;
+}
+.slidercontainer ul li button {
+  background: transparent !important;
+  color: transparent !important;
+}
+.slidercontainer ul li button::before {
+  font-size: 15px !important;
+  color: #0f3460;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  margin: auto;
 }
