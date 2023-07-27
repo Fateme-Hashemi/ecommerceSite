@@ -6,8 +6,10 @@ import FlashDeals from '../components/mainpage/FlashDeals/FlashDeals';
 const Pages = () => {
     return (
         <>
-          <Home />
+         <div className={styles.container}>
+         <Home />
           <FlashDeals   />
+         </div>
        
         </>
     );
