@@ -4,7 +4,7 @@ import Head from "./Head";
 import Search from "./Search";
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = ({cartItem}) => {
   // const [hideheader, setHideheader] = useState(false);
 
   // useEffect(() => {
@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <div className={styles.container}>
         <Head />
-        <Search />
+        <Search CartItem={cartItem} />
         <Navbar />
          
    

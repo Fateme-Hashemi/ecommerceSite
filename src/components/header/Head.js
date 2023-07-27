@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./Head.module.css";
-
 import {FaPhone} from "react-icons/fa";
 import {FaEnvelope} from "react-icons/fa";
 import {FaFlag} from "react-icons/fa";

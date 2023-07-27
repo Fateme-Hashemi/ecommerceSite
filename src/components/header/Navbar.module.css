@@ -60,6 +60,9 @@ header ul li a:hover {
 }
 
 .close {
+    display: none !important;
+}
+.open {
     display: none;
 }
 

@@ -76,10 +76,15 @@ margin-top: 25px;
 
 .navicon {
   color:black;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0 5px;
   display: flex;
   align-items: center;
+  background-color: rgb(199, 191, 191);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 5px;
 
 }
 
@@ -132,4 +137,21 @@ margin-top: 25px;
   margin-top: 10px;
   margin-left: 10px;
   font-size: 18px;
+}
+
+
+.basketicon {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  background: #e94560;
+  width: 12px;
+  height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  right: 0;
+ bottom: 12px ;
+ color: #fff;
 }

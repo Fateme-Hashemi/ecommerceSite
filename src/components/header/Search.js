@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import logo from "../assets/logo (1).svg";
 import styles from "./Search.module.css";
-import { FaUser } from 'react-icons/fa';
+import { FaUser,  FaSearch,  FaShoppingBasket  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { FaShoppingBasket } from "react-icons/fa"
-import { FaSearch } from 'react-icons/fa';
+
+
+
+
 
 const Search = ({ CartItem }) => {
   // useEffect(() => {
@@ -37,14 +39,23 @@ const Search = ({ CartItem }) => {
                     </div>
 
                     <div className={styles.icon}>
-                        <FaShoppingBasket className={styles.navicon} />
+                    <FaUser className={styles.navicon} />
                         <div className={styles.cart}>
                             <Link to='/cart'>
-                                <FaUser className={styles.navicon} />
-                                {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
+                                <FaShoppingBasket className={`${styles.navicon} ${styles.basketicon}`}  />
+                                {CartItem ? <span className={styles.badge}>{CartItem.length}</span> : <span className={styles.badge}>0</span>}
+
                             </Link>
                         </div>
                     </div>
+
+                    
+
+
+
+
+
+
                 </div>
             </section>
         </>
