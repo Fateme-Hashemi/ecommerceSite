@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styles from "./Flash.module.css";
 import { FaRegHeart, FaStar, FaPlus, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
-import {isInCart} from "../../../function";
+import {isInCart, quantityCount} from "../../../function";
 
 //react-slider
 import Slider from 'react-slick';
@@ -112,8 +112,8 @@ const increasment = () => {
                           <button onClick={()=> dispatch({type:"ADDITEM", payload: productItems  })}>Add</button>
                         }
  
-                   
-
+                        {quantityCount(state, productItems.id)> 1 && <button style={{color: "red"}} onClick={()=> dispatch({type: "DECREASE", payload: productItems })}> - </button> }
+                        {quantityCount(state, productItems.id) === 1 && <button style={{color: "red"}} onClick={()=> dispatch({type: "REMOVE-ITEM", payload: productItems })}>REMOVE</button>}
                      
                     </div>
 
