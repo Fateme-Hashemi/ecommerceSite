@@ -2,9 +2,9 @@ import React from 'react';
 import styles from "./Flash.module.css";
 import { FaBolt } from "react-icons/fa";
 import FlashCard from './FlashCard';
-import { useProductContext } from './ProductProvider';
+import { useProductContext } from './context/ProductProvider';
 
-const FlashDeals = ({AddTocart}) => {
+const FlashDeals = () => {
   const productItems = useProductContext();
 
   return (
@@ -15,7 +15,7 @@ const FlashDeals = ({AddTocart}) => {
             <FaBolt className={styles.bolticon} />
             <h1>Flash Deals</h1>
           </div>
-          <FlashCard AddTocart={AddTocart} />
+          <FlashCard />
         </div>
       </section>
     </>

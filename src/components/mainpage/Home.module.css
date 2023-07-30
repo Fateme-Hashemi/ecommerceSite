@@ -1,7 +1,7 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center !important;
+    justify-content: space-between !important;
+    
     width: 90%;
     margin: 30px;
 

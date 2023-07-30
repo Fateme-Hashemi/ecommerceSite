@@ -3,12 +3,12 @@ import Home from '../components/mainpage/Home';
 import styles from "./Pages.module.css"
 import FlashDeals from '../components/mainpage/FlashDeals/FlashDeals';
 
-const Pages = ({cartItem, AddToCart}) => {
+const Pages = () => {
     return (
         <>
          <div className={styles.container}>
-         <Home cartItem={cartItem} />
-          <FlashDeals AddToCart={AddToCart}   />
+         <Home />
+          <FlashDeals className={styles.flashcontainer}   />
          </div>
        
         </>

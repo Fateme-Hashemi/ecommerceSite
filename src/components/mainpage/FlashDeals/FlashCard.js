@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "./Flash.module.css";
 import { FaRegHeart, FaStar, FaPlus, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
-import { useProductContext } from './ProductProvider';
+import { useProductContext } from "./context/ProductProvider";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -33,22 +33,13 @@ const PrevArrow = (props) => {
 
 
 
-
-
-const FlashCard = ({AddTocart}) => {
+const FlashCard = () => {
 
 const {count, setCount} =useState(0)
 
 const increasment = () => {
   setCount (count + 1)
 }
-
-
-
-
-
-
-
 
 
 
@@ -79,8 +70,8 @@ const increasment = () => {
                   <span className={styles.discount}>{item.discount}% Off</span>
                   <img src={item.cover} alt={item.name} />
                   <div className={styles.productlink}>
-                    <label>0</label> <br />
-                    <FaRegHeart className={styles.icon} onClick={()=>increasment(productItems)} />
+                    <label>{count}</label> <br />
+                    <FaRegHeart className={styles.icon} />
                   </div>
                 </div>
                 <div className={styles.productdetails}>
@@ -94,9 +85,18 @@ const increasment = () => {
                   </div>
                   <div className={styles.price}>
                     <h4>{item.price}.00</h4>
-                    <button onClick={() => AddTocart(item)}>
-                      <FaPlus />
+
+
+                    <button >
+ 
+                    <FaPlus />
+
+                     
                     </button>
+
+
+
+
                   </div>
                 </div>
               </div>

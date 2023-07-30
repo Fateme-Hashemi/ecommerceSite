@@ -23,7 +23,7 @@ const Header = ({cartItem}) => {
     <>
       <div className={styles.container}>
         <Head />
-        <Search CartItem={cartItem} />
+        <Search />
         <Navbar />
          
    
