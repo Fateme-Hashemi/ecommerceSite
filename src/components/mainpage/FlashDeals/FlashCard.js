@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from "./Flash.module.css";
 import { FaRegHeart, FaStar, FaPlus, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
-import { useProductContext } from "./context/ProductProvider";
+import {isInCart} from "../../../function";
+
+//react-slider
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+
+//context
+import {cartContext} from "./context/CartContextProvider";
+import { useProductContext } from "./context/ProductProvider";
 
 
 const NextArrow = (props) => {
@@ -58,6 +65,15 @@ const increasment = () => {
 
   const productItems = useProductContext();
 
+  const {state, dispatch} =useContext(cartContext);
+
+
+
+
+
+
+
+
   return (
     <>
      <div className={styles.container}>
@@ -87,12 +103,19 @@ const increasment = () => {
                     <h4>{item.price}.00</h4>
 
 
-                    <button >
+                    <div >
+                        {
+                          isInCart(state, productItems.id) 
+                          ?
+                          <FaPlus onClick={() => dispatch({ type: 'INCREASE', payload: productItems })} />
+                          :
+                          <button onClick={()=> dispatch({type:"ADDITEM", payload: productItems  })}>Add</button>
+                        }
  
-                    <FaPlus />
+                   
 
                      
-                    </button>
+                    </div>
 
 
 
