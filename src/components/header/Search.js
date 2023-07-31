@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import logo from "../assets/logo (1).svg";
 import styles from "./Search.module.css";
 import { FaUser,  FaSearch,  FaShoppingBasket  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
+//context
+import { cartContext } from '../mainpage/FlashDeals/context/CartContextProvider';
 
 
-
-const Search = ({ CartItem }) => {
+const Search = ({CartItem}) => {
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const search = document.querySelector(`.${styles.search}`);
@@ -23,6 +24,10 @@ const Search = ({ CartItem }) => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
+
+
+const {state} = useContext(cartContext);
+
 
     return (
         <>
@@ -43,8 +48,7 @@ const Search = ({ CartItem }) => {
                         <div className={styles.cart}>
                             <Link to='/cart'>
                                 <FaShoppingBasket className={`${styles.navicon} ${styles.basketicon}`}  />
-                                {CartItem ? <span className={styles.badge}>{CartItem.length}</span> : <span className={styles.badge}>0</span>}
-
+                                <span className={styles.badge}>{state.itemsCounter}</span>
                             </Link>
                         </div>
                     </div>

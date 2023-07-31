@@ -1,7 +1,11 @@
 import React, { useState, useContext } from 'react';
 import styles from "./Flash.module.css";
-import { FaRegHeart, FaStar, FaPlus, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 import {isInCart, quantityCount} from "../../../function";
+
+
+//Icons
+import { FaRegHeart, FaStar, FaPlus, FaLongArrowAltLeft, FaLongArrowAltRight, FaTrash } from 'react-icons/fa';
+
 
 //react-slider
 import Slider from 'react-slick';
@@ -104,16 +108,18 @@ const increasment = () => {
 
 
                     <div >
+                         {quantityCount(state, productItems.id) > 1 && <button  onClick={()=> dispatch({type: "DECREASE", payload: productItems })}> - </button> }
+                        {quantityCount(state, productItems.id) === 1 && <button onClick={()=> dispatch({type: "REMOVE-ITEM", payload: productItems })}><FaTrash /></button>}
                         {
                           isInCart(state, productItems.id) 
                           ?
-                          <FaPlus onClick={() => dispatch({ type: 'INCREASE', payload: productItems })} />
+                          <button onClick={() => dispatch({ type: 'INCREASE', payload: productItems })}> <FaPlus /></button>
+                         
                           :
-                          <button onClick={()=> dispatch({type:"ADDITEM", payload: productItems  })}>Add</button>
+                          <button style={{fontSize: "12px"}} onClick={()=> dispatch({type:"ADDITEM", payload: productItems  })}>Add</button>
                         }
  
-                        {quantityCount(state, productItems.id)> 1 && <button style={{color: "red"}} onClick={()=> dispatch({type: "DECREASE", payload: productItems })}> - </button> }
-                        {quantityCount(state, productItems.id) === 1 && <button style={{color: "red"}} onClick={()=> dispatch({type: "REMOVE-ITEM", payload: productItems })}>REMOVE</button>}
+                       
                      
                     </div>
 

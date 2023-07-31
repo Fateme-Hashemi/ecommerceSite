@@ -27,8 +27,9 @@ const App = () => {
       <Header   />
       <BrowserRouter>
           <Switch>
-            <Route exact path='/' component={Pages} />
-            <Route exact path='/cart' component={Cart} />
+          <Route path='/cart' component={Cart} />
+          <Route exact path='/' component={Pages} />
+          
           </Switch>
         </BrowserRouter>
       </CartContextProvider>
